@@ -19,7 +19,7 @@ from django.http import JsonResponse
 @api_view(['GET'])
 def GetAllDocsView(request):
     AllDocs = DocData.objects.all()
-    serializer_class = DocDataSerializer(AllUsers, many=True)
+    serializer_class = DocDataSerializer(AllDocs, many=True)
     return Response({"data":serializer_class.data}, status=status.HTTP_200_OK)
 
 
